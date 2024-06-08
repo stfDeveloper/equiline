@@ -1,33 +1,50 @@
 *:not(i) {
+  // font awesome non vuole altro font family
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
 p,
-span {
+span,
+label {
   font-size: 14px;
 }
 
 .home {
   overflow-x: hidden;
 }
-
 .hero {
   width: 100vw;
-  height: 65vh;
-  background-color: red;
+  height: 45vh;
   color: white;
   font-weight: 500;
+  position: relative;
+  overflow: hidden;
 }
-.hero-header {
-  width: 100vw;
-  height: 15%;
+
+.hero-content {
+  position: relative;
+  width: 100%;
+  height: 85%;
+  z-index: 2;
 }
-.logo {
-  font-family: "Raleway", sans-serif !important;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  letter-spacing: 3px;
-  font-style: normal;
-  font-size: 25px;
+
+.background-image {
+  background-size: cover;
+  background-position: center;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.hero-content .col-8,
+.hero-content .col-2 {
+  z-index: 3;
+}
+
+.hero-content p,
+.hero-content button {
+  position: relative;
+  z-index: 3;
 }
 
 .text-image-container-1 .image {
@@ -68,10 +85,6 @@ span {
 
 .card-space {
   height: 70%;
-}
-
-.card-text {
-  font-size: 12px;
 }
 
 .card-title {
@@ -175,10 +188,31 @@ span {
 
 .newsletter {
   color: white;
-
   background-color: black;
 }
 
-.copyright {
-  background-color: #938583;
+/* Hide the default checkbox */
+.privacy_check {
+  -webkit-appearance: none; /* Remove default checkbox style in Webkit browsers */
+  -moz-appearance: none; /* Remove default checkbox style in Firefox */
+  appearance: none; /* Remove default checkbox style */
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border: 2px solid white; /* White border */
+  cursor: pointer; /* Change cursor to pointer */
+  position: relative; /* Position relative for custom checkmark */
+}
+
+/* Custom checkmark for the checkbox */
+.privacy_check:checked::before {
+  content: "";
+  display: block;
+  width: 8px; /* Adjust size to fit within the border */
+  height: 8px;
+  background: white; /* White square */
+  position: absolute;
+  top: 50%; /* Center the square vertically */
+  left: 50%; /* Center the square horizontally */
+  transform: translate(-50%, -50%); /* Center the square using transform */
 }

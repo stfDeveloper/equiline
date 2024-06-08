@@ -1,34 +1,38 @@
 <section class="home">
   <!-- hero carousel -->
-  <div class="hero d-flex flex-column">
-    <div class="hero-header d-flex justify-content-center align-items-center">
-      <div
-        class="hero-burger col-3 d-flex justify-content-start align-items-center px-3"
-      >
-        <div><i class="fa-solid fa-bars"></i></div>
-      </div>
-      <div
-        class="hero-logo col-6 d-flex justify-content-center align-items-center"
-      >
-        <div><span class="logo">EQUILINE</span></div>
-      </div>
-      <div
-        class="hero-cart col-3 d-flex justify-content-end align-items-center px-3"
-      >
-        <div><i class="fa-solid fa-bag-shopping"></i></div>
-      </div>
-    </div>
-
+  <div class="hero d-flex flex-column position-relative">
+    <!-- Background image -->
     <div
-      class="hero-content h-100 d-flex justify-content-center align-items-center pb-5"
+      class="background-image position-absolute w-100 h-100"
+      [ngStyle]="{
+        'background-image':
+          'url(' +
+          (isTelefono
+            ? hero_categories[currentIndex]?.image_mobile
+            : hero_categories[currentIndex]?.image_desktop) +
+          ')'
+      }"
+    ></div>
+
+    <app-header></app-header>
+
+    <!-- aggiungi animazione carousel -->
+    <div
+      class="hero-content h-100 d-flex justify-content-center align-items-center pb-5 position-relative"
     >
-      <div class="col-2 d-flex justify-content-center align-items-center">
+      <div
+        class="col-2 d-flex justify-content-center align-items-center"
+        (click)="prevSlide()"
+      >
         <i class="fa-solid fa-chevron-left"></i>
       </div>
       <div
-        class="col-8 d-flex justify-content-center align-items-center d-flex flex-column"
+        class="col-8 d-flex justify-content-center align-items-center d-flex flex-column position-relative"
+        style="z-index: 2"
       >
-        <p style="font-size: 23px">SS24 COLLECTION</p>
+        <p style="font-size: 23px">
+          {{ hero_categories[currentIndex]?.title }}
+        </p>
         <button
           style="
             border: 1px solid rgba(0, 0, 0, 0.469);
@@ -37,10 +41,13 @@
           "
           class="p-3"
         >
-          PER LUI
+          {{ hero_categories[currentIndex]?.buttonContent }}
         </button>
       </div>
-      <div class="col-2 d-flex justify-content-center align-items-center">
+      <div
+        class="col-2 d-flex justify-content-center align-items-center"
+        (click)="nextSlide()"
+      >
         <i class="fa-solid fa-chevron-right"></i>
       </div>
     </div>
@@ -59,7 +66,13 @@
       </span>
     </div>
 
-    <div class="image"></div>
+    <div class="image">
+      <img
+        src="https://www.equiline.it/media/wysiwyg/xanto_shop.jpg"
+        alt=""
+        class="w-100 h-100"
+      />
+    </div>
   </div>
   <!-- fine novità -->
 
@@ -265,7 +278,7 @@
 
     <!--! fix margin cards -->
 
-    <div class="card-swiper">
+    <div class="card-swiper mt-5">
       <div class="card card-3 d-flex justify-content-between flex-column mx-3">
         <div class="card-space"></div>
 
@@ -379,7 +392,12 @@
       <button class="about-btn w-50 p-3 my-3">ISCRIVITI</button>
 
       <div class="privacy d-flex align-items-center my-3">
-        <input type="checkbox" name="" id="privacy_check" />
+        <input
+          type="checkbox"
+          name=""
+          id="privacy_check"
+          class="privacy_check"
+        />
         <label for="privacy_check" class="mx-3"
           >Ho letto e accetto la <u>Privacy Policy</u>
           <span style="color: red"> *</span>
@@ -392,12 +410,4 @@
   <!-- footer -->
   <app-footer></app-footer>
   <!-- fine footer -->
-
-  <!-- copyright -->
-  <div class="copyright py-4 px-3">
-    <span> SEZIONE COPYRIGHT </span>
-
-    <div class="made_by mt-5">CREDITS</div>
-  </div>
-  <!-- fine copyright -->
 </section>
