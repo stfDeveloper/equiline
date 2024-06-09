@@ -1,11 +1,10 @@
 <!-- !TODO  -->
-<!-- FAI FOOTER -->
 <!-- AGGIUNGI ANIMAZIONE CAROUSEL -->
-<!-- AGGIUNGI LOOP IN IMAGE SLIDER X 2 -->
 <!-- AGGIUNGI REDIRECT VIDEO E VISUALIZAZIONE IN SITO -->
 <!-- RENDI RESPONSIVE TUTTO -->
-<!-- FAI PAGINA DONNA, AL CLICK DI ITEM DA DONNA DA REDIRECT. -->
 <!-- DENTRO REDIRECT DONNA, NELLA SEZIONE DI SCEGLI TAGLIA, FAI ALGORITMO -->
+
+<!-- se header in home, bg bianco, se in donna bg nero -->
 
 <section class="home">
   <!-- hero carousel -->
@@ -36,7 +35,7 @@
         <i class="fa-solid fa-chevron-left"></i>
       </div>
       <div
-        class="col-8 d-flex justify-content-center align-items-center d-flex flex-column position-relative"
+        class="col-8 d-flex justify-content-center align-items-center d-flex flex-column position-relative content"
         style="z-index: 2"
       >
         <p style="font-size: 23px">
@@ -202,48 +201,24 @@
   </div>
 
   <div class="card-swiper px-2">
-    <div class="card card-2 d-flex flex-column mx-3" (click)="(true)">
-      <div class="card-2-img h-75"></div>
+    <div
+      class="card card-2 d-flex flex-column mx-3"
+      *ngFor="let item of must_haves"
+      routerLink="/donna"
+    >
+      <div class="card-2-img h-75">
+        <img
+          src="{{ item.image }}"
+          alt=""
+          class="w-100 h-100"
+          style="background-size: cover; background-position: center center"
+        />
+      </div>
       <div class="card-2-text pt-2">
-        <span>LEGGINGS FULL GRIP INDIGO BLU CON LOGO LUCIDO DA DONNA</span>
+        <span>{{ item.title }}</span>
       </div>
       <div class="card-2-price pt-2">
-        <b>€120,00</b>
-      </div>
-    </div>
-
-    <div class="card card-2 d-flex flex-column mx-3" (click)="(true)">
-      <div class="card-2-img h-75"></div>
-      <div class="card-2-text pt-2">
-        <span>GIACCA IMPERMEABILE NERA DA DONNA</span>
-      </div>
-      <div class="card-2-price pt-2">
-        <b>€180,00</b>
-      </div>
-    </div>
-
-    <div class="card card-2 d-flex flex-column mx-3" (click)="(true)">
-      <div class="card-2-img h-75"></div>
-      <div class="card-2-text pt-2">
-        <span
-          >POLO DA COMPETIZIONE BIANCA CON MANICHE LUNGHE IN TULLE DA
-          DONNA</span
-        >
-      </div>
-      <div class="card-2-price pt-2">
-        <b>€140,00</b>
-      </div>
-    </div>
-
-    <div class="card card-2 d-flex flex-column mx-3" (click)="(true)">
-      <div class="card-2-img h-75"></div>
-      <div class="card-2-text pt-2">
-        <span
-          >PANTALONI BIANCHI FULL GRIP A VITA ALTA CON DETTAGLI CRISTALLO</span
-        >
-      </div>
-      <div class="card-2-price pt-2">
-        <b>€230,00</b>
+        <b>{{ item.price }}</b>
       </div>
     </div>
   </div>
@@ -272,7 +247,13 @@
 
     <button class="about-btn w-50 p-3">SCOPRI DI PIU'</button>
 
-    <div class="about-us-img my-4"></div>
+    <div class="about-us-img my-4">
+      <img
+        src="https://www.equiline.it/media/wysiwyg/Homepage/equiline_universe.jpg"
+        alt=""
+        class="w-100 h-100"
+      />
+    </div>
   </div>
   <!-- fine marketing campaign -->
 
@@ -288,81 +269,32 @@
     <!--! fix margin cards -->
 
     <div class="card-swiper mt-5">
-      <div class="card card-3 d-flex justify-content-between flex-column mx-3">
-        <div class="card-space"></div>
-
-        <div class="card-3-details p-3 d-flex flex-column justify-content-end">
-          <p class="card-text card-3-text">
-            GIACOMO <br />
-            CASADEI
-          </p>
-          <span class="tag-country">Italia</span>
+      <div
+        class="card card-3 d-flex justify-content-between flex-column mx-3"
+        *ngFor="let testimonial of testimonials"
+      >
+        <div class="card-space card-space-3">
+          <img src="{{ testimonial.image }}" class="card-3-img" />
         </div>
-      </div>
-      <div class="card card-3 d-flex justify-content-between flex-column mx-3">
-        <div class="card-space"></div>
 
-        <div class="card-3-details p-3 d-flex flex-column justify-content-end">
+        <div
+          class="card-3-details p-3 d-flex flex-column justify-content-end"
+          style="z-index: 1"
+        >
           <p class="card-text card-3-text">
-            DARRAGH <br />
-            KENNY
+            {{ testimonial.name }} <br />
+            {{ testimonial.surname }}
           </p>
-          <span class="tag-country">Irlanda</span>
-        </div>
-      </div>
-      <div class="card card-3 d-flex justify-content-between flex-column mx-3">
-        <div class="card-space"></div>
-
-        <div class="card-3-details p-3 d-flex flex-column justify-content-end">
-          <p class="card-text card-3-text">
-            ALBERTO <br />
-            ZORZI
-          </p>
-          <span class="tag-country">Italia</span>
-        </div>
-      </div>
-      <div class="card card-3 d-flex justify-content-between flex-column mx-3">
-        <div class="card-space"></div>
-
-        <div class="card-3-details p-3 d-flex flex-column justify-content-end">
-          <p class="card-text card-3-text">
-            NIELS <br />
-            BRUYNSEELS
-          </p>
-          <span class="tag-country">Belgio</span>
-        </div>
-      </div>
-      <div class="card card-3 d-flex justify-content-between flex-column mx-3">
-        <div class="card-space"></div>
-
-        <div class="card-3-details p-3 d-flex flex-column justify-content-end">
-          <p class="card-text card-3-text">
-            JANE <br />
-            RICHARD
-          </p>
-          <span class="tag-country">Svizzera</span>
-        </div>
-      </div>
-      <div class="card card-3 d-flex justify-content-between flex-column mx-3">
-        <div class="card-space"></div>
-
-        <div class="card-3-details p-3 d-flex flex-column justify-content-end">
-          <p class="card-text card-3-text">
-            ISABEL <br />
-            COOL
-          </p>
-          <span class="tag-country">Belgio</span>
-        </div>
-      </div>
-      <div class="card card-3 d-flex justify-content-between flex-column mx-3">
-        <div class="card-space"></div>
-
-        <div class="card-3-details p-3 d-flex flex-column justify-content-end">
-          <p class="card-text card-3-text">
-            DOROTHEE <br />
-            SCHNEIDER
-          </p>
-          <span class="tag-country">Italia</span>
+          <span class="tag-country d-flex align-items-center p-0 m-0">
+            <img
+              src="{{ testimonial.flag }}"
+              alt=""
+              class="flag-country d-flex justify-content-center align-items-center"
+            />
+            <span class="px-2">
+              {{ testimonial.country }}
+            </span></span
+          >
         </div>
       </div>
     </div>
@@ -373,8 +305,8 @@
   <div
     class="social d-flex justify-content-center align-items-center flex-column py-5 my-4"
   >
-    <h1>SEGUICI SU INSTAGRAM</h1>
-    <h3>#EquilineOfficial</h3>
+    <h2>SEGUICI SU INSTAGRAM</h2>
+    <h1>#EQUILINEOFFICIAL</h1>
     <span
       >#Usa #equiline o #equilinesaddledivision e tagga @equiline_official nei
       tuoi post per avere l'occasione di essere ricondiviso sui nostri canali

@@ -9,6 +9,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { DonnaComponent } from './components/donna/donna.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CreditsModalComponent } from './components/credits-modal/credits-modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MenuDialogComponent } from './components/menu/menu.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -23,8 +27,16 @@ const routes: Routes = [
     HeaderComponent,
     DonnaComponent,
     FooterComponent,
+    CreditsModalComponent,
+    MenuDialogComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, RouterModule.forRoot(routes)],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    RouterModule.forRoot(routes),
+    MatDialogModule,
+    BrowserAnimationsModule,
+  ],
   exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent],
