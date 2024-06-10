@@ -38,7 +38,7 @@
         class="col-8 d-flex justify-content-center align-items-center d-flex flex-column position-relative content"
         style="z-index: 2"
       >
-        <p style="font-size: 23px">
+        <p style="font-size: 23px" class="title-hero pb-4">
           {{ hero_categories[currentIndex]?.title }}
         </p>
         <button
@@ -47,7 +47,7 @@
             font-size: 12px;
             font-weight: 600;
           "
-          class="p-3"
+          class="p-3 btn-hero"
         >
           {{ hero_categories[currentIndex]?.buttonContent }}
         </button>
@@ -63,162 +63,205 @@
   <!-- fine hero carousel -->
 
   <!-- novità -->
-  <div class="text-image-container-1">
-    <div class="text d-flex flex-column py-5 px-3">
-      <span class="title pb-3">IN ARRIVO IL MESE PROSSIMO:</span>
-      <span class="subtitle pb-4" style="font-weight: 600">XANTO</span>
-      <span class="text">
-        Xanto, il nostro nuovo casco, sta per arrivare e sarà diverso da tutto
-        ciò che hai visto finora. Resta connesso per il reveal e sii tra i primi
-        a sperimentare un nuovo livello di sicurezza.
-      </span>
-    </div>
+  <div class="container pt-md-5">
+    <div class="row text-image-container-1">
+      <!-- Text section -->
+      <div
+        class="col-12 col-md-6 d-flex flex-column py-5 px-3 justify-content-center"
+      >
+        <span class="title pb-3">IN ARRIVO IL MESE PROSSIMO:</span>
+        <span class="subtitle pb-4" style="font-weight: 600">XANTO</span>
+        <span class="text">
+          Xanto, il nostro nuovo casco, sta per arrivare e sarà diverso da tutto
+          ciò che hai visto finora. Resta connesso per il reveal e sii tra i
+          primi a sperimentare un nuovo livello di sicurezza.
+        </span>
+      </div>
 
-    <div class="image">
-      <img
-        src="https://www.equiline.it/media/wysiwyg/xanto_shop.jpg"
-        alt=""
-        class="w-100 h-100"
-      />
+      <!-- Image section -->
+      <div class="col-12 col-md-6 p-0 m-0">
+        <img
+          src="https://www.equiline.it/media/wysiwyg/xanto_shop.jpg"
+          alt=""
+          class="w-100 h-100"
+        />
+      </div>
     </div>
   </div>
   <!-- fine novità -->
 
   <!-- card categorie -->
-  <div class="card-swiper pt-5">
-    <div class="card d-flex flex-column mx-3 position-relative">
-      <img
-        src="https://www.equiline.it/media/wysiwyg/categoria_donna_hp.jpg"
-        class="card-1-img position-absolute w-100 h-100"
-        style="z-index: 1"
-      />
-      <div class="card-space"></div>
 
-      <div
-        class="card-details px-3 d-flex flex-column position-relative"
-        style="z-index: 2"
-      >
-        <h3 class="card-title pt-3">DONNA</h3>
-        <p class="card-text pt-2">
-          Scopri le categorie donna per allenamento, tempo libero e
-          competizione. La sartorialità e il made in Italy si intrecciano con la
-          ricerca di materiali e tessuti innovativi ed altamente performanti,
-          per il massimo comfort e stile.
-        </p>
-        <div class="position-relative d-flex w-100 h-100">
-          <button class="btn-scopri align-self-end mb-3 py-2 px-4">
-            SCOPRI
-          </button>
-        </div>
-      </div>
-    </div>
+  <div class="container-fluid p-0 m-0">
+    <div class="card-swiper card-swiper-1 pt-5" id="swiper">
+      <div class="card card-1 d-flex flex-column position-relative">
+        <img
+          src="https://www.equiline.it/media/wysiwyg/categoria_donna_hp.jpg"
+          class="card-1-img position-absolute"
+          style="z-index: 1"
+        />
+        <div class="card-space"></div>
 
-    <div class="card d-flex flex-column mx-3 position-relative">
-      <img
-        src="https://www.equiline.it/media/wysiwyg/categoria_uomo_hp.jpg"
-        class="card-1-img position-absolute w-100 h-100"
-        style="z-index: 1"
-      />
-      <div class="card-space"></div>
-      <div
-        class="card-details px-3 d-flex flex-column position-relative"
-        style="z-index: 2"
-      >
-        <h3 class="card-title pt-3">UOMO</h3>
-        <p class="card-text pt-2">
-          Scopri tutte le categorie dell’abbigliamento maschile e gli articoli
-          per allenamento e competizione. La ricerca di materiali innovativi e
-          altamente performanti garantisce al cavaliere il massimo comfort
-          unendo l'eleganza e lo stile del design italiano.
-        </p>
-        <div class="position-relative d-flex w-100 h-100">
-          <button class="btn-scopri align-self-end mb-3 py-2 px-4">
-            SCOPRI
-          </button>
+        <div
+          class="card-details px-3 d-flex flex-column position-relative"
+          style="z-index: 2"
+        >
+          <h3 class="card-title pt-3">DONNA</h3>
+          <p class="card-text pt-2">
+            Scopri le categorie donna per allenamento, tempo libero e
+            competizione. La sartorialità e il made in Italy si intrecciano con
+            la ricerca di materiali e tessuti innovativi ed altamente
+            performanti, per il massimo comfort e stile.
+          </p>
+          <div class="position-relative d-flex w-100 h-100">
+            <button class="btn-scopri align-self-end mb-3 py-2 px-4">
+              SCOPRI
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="card d-flex flex-column mx-3 position-relative">
-      <img
-        src="https://www.equiline.it/media/wysiwyg/categoria_cavallo_hp.jpg"
-        class="card-1-img position-absolute w-100 h-100"
-        style="z-index: 1"
-      />
-      <div class="card-space"></div>
-      <div
-        class="card-details px-3 d-flex flex-column position-relative"
-        style="z-index: 2"
-      >
-        <h3 class="card-title pt-3">CAVALLO</h3>
-        <p class="card-text pt-2">
-          Gli accessori per il cavallo Equiline nascono dal know-how di
-          importanti campioni e dalla particolare attenzione al benessere del
-          cavallo. Un’accurata ricerca di materiali di primissima qualità, forme
-          e tecnologie sono il segreto che rende così esclusiva la nostra linea.
-        </p>
-        <div class="position-relative d-flex w-100 h-100">
-          <button class="btn-scopri align-self-end mb-3 py-2 px-4">
-            SCOPRI
-          </button>
+
+      <div class="card card-1 d-flex flex-column position-relative">
+        <img
+          src="https://www.equiline.it/media/wysiwyg/categoria_uomo_hp.jpg"
+          class="card-1-img position-absolute w-100 h-100"
+          style="z-index: 1"
+        />
+        <div class="card-space"></div>
+        <div
+          class="card-details px-3 d-flex flex-column position-relative"
+          style="z-index: 2"
+        >
+          <h3 class="card-title pt-3">UOMO</h3>
+          <p class="card-text pt-2">
+            Scopri tutte le categorie dell’abbigliamento maschile e gli articoli
+            per allenamento e competizione. La ricerca di materiali innovativi e
+            altamente performanti garantisce al cavaliere il massimo comfort
+            unendo l'eleganza e lo stile del design italiano.
+          </p>
+          <div class="position-relative d-flex w-100 h-100">
+            <button class="btn-scopri align-self-end mb-3 py-2 px-4">
+              SCOPRI
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="card d-flex flex-column mx-3 position-relative">
-      <img
-        src="https://www.equiline.it/media/wysiwyg/categoria_selle_hp.jpg"
-        class="card-1-img position-absolute w-100 h-100"
-        style="z-index: 1"
-      />
-      <div class="card-space"></div>
-      <div
-        class="card-details px-3 d-flex flex-column position-relative"
-        style="z-index: 2"
-      >
-        <h3 class="card-title pt-3">SELLERIA</h3>
-        <p class="card-text pt-2">
-          L’eleganza e lo stile del Made in Italy sono ancora una volta mixati
-          dal nostro saper fare artigianale, sapiente e al contempo innovativo.
-          “Una sella per due”, interante personalizzata, capace di coniugare il
-          rispetto del cavallo e il comfort del cavaliere.
-        </p>
-        <div class="position-relative d-flex w-100 h-100">
-          <button class="btn-scopri align-self-end mb-3 py-2 px-4">
-            SCOPRI
-          </button>
+      <div class="card card-1 d-flex flex-column position-relative">
+        <img
+          src="https://www.equiline.it/media/wysiwyg/categoria_cavallo_hp.jpg"
+          class="card-1-img position-absolute w-100 h-100"
+          style="z-index: 1"
+        />
+        <div class="card-space"></div>
+        <div
+          class="card-details px-3 d-flex flex-column position-relative"
+          style="z-index: 2"
+        >
+          <h3 class="card-title pt-3">CAVALLO</h3>
+          <p class="card-text pt-2">
+            Gli accessori per il cavallo Equiline nascono dal know-how di
+            importanti campioni e dalla particolare attenzione al benessere del
+            cavallo. Un’accurata ricerca di materiali di primissima qualità,
+            forme e tecnologie sono il segreto che rende così esclusiva la
+            nostra linea.
+          </p>
+          <div class="position-relative d-flex w-100 h-100">
+            <button class="btn-scopri align-self-end mb-3 py-2 px-4">
+              SCOPRI
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="card card-1 d-flex flex-column position-relative">
+        <img
+          src="https://www.equiline.it/media/wysiwyg/categoria_selle_hp.jpg"
+          class="card-1-img position-absolute w-100 h-100"
+          style="z-index: 1"
+        />
+        <div class="card-space"></div>
+        <div
+          class="card-details px-3 d-flex flex-column position-relative"
+          style="z-index: 2"
+        >
+          <h3 class="card-title pt-3">SELLERIA</h3>
+          <p class="card-text pt-2">
+            L’eleganza e lo stile del Made in Italy sono ancora una volta mixati
+            dal nostro saper fare artigianale, sapiente e al contempo
+            innovativo. “Una sella per due”, interante personalizzata, capace di
+            coniugare il rispetto del cavallo e il comfort del cavaliere.
+          </p>
+          <div class="position-relative d-flex w-100 h-100">
+            <button class="btn-scopri align-self-end mb-3 py-2 px-4">
+              SCOPRI
+            </button>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
   <!-- fine card categorie -->
 
   <!-- must have -->
   <div
-    class="must-have d-flex justify-content-center align-items-center flex-column p-5"
+    class="container-fluid p-0 m-0"
+    [ngClass]="{
+      'mx-5': !isTelefono,
+      '': isTelefono
+    }"
   >
-    <div class="must-have-title d-flex">
-      <h1>SS24 MUST HAVE</h1>
-    </div>
-  </div>
-
-  <div class="card-swiper px-2">
     <div
-      class="card card-2 d-flex flex-column mx-3"
-      *ngFor="let item of must_haves"
-      routerLink="/donna"
+      class="must-have d-flex justify-content-center align-items-center flex-column p-5"
     >
-      <div class="card-2-img h-75">
-        <img
-          src="{{ item.image }}"
-          alt=""
-          class="w-100 h-100"
-          style="background-size: cover; background-position: center center"
-        />
+      <div class="must-have-title d-flex">
+        <h1>SS24 MUST HAVE</h1>
       </div>
-      <div class="card-2-text pt-2">
-        <span>{{ item.title }}</span>
-      </div>
-      <div class="card-2-price pt-2">
-        <b>{{ item.price }}</b>
+    </div>
+
+    <div
+      class="container-fluid p-0 m-0"
+      [ngClass]="{
+        'mx-5': !isTelefono,
+        '': isTelefono
+      }"
+    >
+      <div class="position-relative">
+        <div class="card-swiper card-swiper-2" #swiper>
+          <div
+            class="card card-2 position-relative"
+            *ngFor="let item of must_haves"
+            routerLink="/donna"
+          >
+            <div class="card-2-img-container">
+              <img
+                src="{{ item.image }}"
+                alt=""
+                class="card-2-img w-100 h-100"
+                style="object-fit: contain"
+              />
+            </div>
+            <div class="card-2-text pt-2">
+              <span>{{ item.title }}</span>
+            </div>
+            <div class="card-2-price pt-2">
+              <b>{{ item.price }}</b>
+            </div>
+          </div>
+        </div>
+        <button
+          *ngIf="!isTelefono"
+          class="arrow arrow-left"
+          (click)="scroll(-30)"
+        >
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <button
+          *ngIf="!isTelefono"
+          class="arrow arrow-right"
+          (click)="scroll(30)"
+        >
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
       </div>
     </div>
   </div>
@@ -233,72 +276,103 @@
     </div>
   </div>
 
-  <div class="about-us d-flex justify-content-center mt-5 flex-column p-2">
-    <p style="font-size: 36px">EQUILINE UNIVERSE</p>
-    <p class="about-us-text">LOOKING AHEAD</p>
-    <p class="about-us-text">
-      Dal 1980 Equiline rappresenta innovazione, modernità e tradizione. Grazie
-      alla filosofia volta alla costante ricerca di materiali innovativi e
-      prodotti che garantiscano il massimo comfort e bessere del cavallo e del
-      cavaliere, senza rinunciare al design, allo stile e all'eleganza del Made
-      in Italy, Equiline è diventato negli anni uno dei principali brand
-      aspirazionali del mondo equestre.
-    </p>
-
-    <button class="about-btn w-50 p-3">SCOPRI DI PIU'</button>
-
-    <div class="about-us-img my-4">
-      <img
-        src="https://www.equiline.it/media/wysiwyg/Homepage/equiline_universe.jpg"
-        alt=""
-        class="w-100 h-100"
-      />
+  <div class="about-us d-flex flex-column justify-content-center mt-5 p-2">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-6">
+        <div class="about-us-img my-4">
+          <img
+            src="https://www.equiline.it/media/wysiwyg/Homepage/equiline_universe.jpg"
+            alt=""
+            class="w-100 h-100"
+          />
+        </div>
+      </div>
+      <div class="col-md-6 d-flex flex-column justify-content-center">
+        <p style="font-size: 36px">EQUILINE UNIVERSE</p>
+        <p class="about-us-text">LOOKING AHEAD</p>
+        <p class="about-us-text">
+          Dal 1980 Equiline rappresenta innovazione, modernità e tradizione.
+          Grazie alla filosofia volta alla costante ricerca di materiali
+          innovativi e prodotti che garantiscano il massimo comfort e bessere
+          del cavallo e del cavaliere, senza rinunciare al design, allo stile e
+          all'eleganza del Made in Italy, Equiline è diventato negli anni uno
+          dei principali brand aspirazionali del mondo equestre.
+        </p>
+        <button class="about-btn w-50 p-3 mt-4">SCOPRI DI PIU'</button>
+      </div>
     </div>
   </div>
   <!-- fine marketing campaign -->
 
   <!-- testimonials -->
-  <div class="testimonials mt-5 p-2">
-    <h1>TESTIMONIALS</h1>
-    <h4 class="py-2">#EQUILINERIDERSTEAM</h4>
-    <p>
-      Importanti cavalieri di fama internazionale sono da sempre ambassador
-      globali dei nostri valori.
-    </p>
-
-    <!--! fix margin cards -->
-
-    <div class="card-swiper mt-5">
+  <div class="testimonials mt-5">
+    <div
+      *ngIf="isTelefono"
+      class="testimonials-heading d-flex flex-column mx-5"
+    >
+      <h1>TESTIMONIALS</h1>
+      <h4 class="py-2">#EQUILINERIDERSTEAM</h4>
+      <p>
+        Importanti cavalieri di fama internazionale sono da sempre ambassador
+        globali dei nostri valori.
+      </p>
+    </div>
+    <div
+      class="card-swiper mt-5"
+      [ngClass]="{
+        'row w-100': !isTelefono,
+        '': isTelefono
+      }"
+    >
       <div
-        class="card card-3 d-flex justify-content-between flex-column mx-3"
-        *ngFor="let testimonial of testimonials"
+        [ngClass]="{
+          'd-flex flex-row p-4': isTelefono,
+          'row justify-content-center': !isTelefono
+        }"
+        class=""
       >
-        <div class="card-space card-space-3">
-          <img src="{{ testimonial.image }}" class="card-3-img" />
+        <div
+          *ngIf="!isTelefono"
+          class="card testimonials-heading d-flex justify-content-center"
+        >
+          <h1>TESTIMONIALS</h1>
+          <h4 class="py-2">#EQUILINERIDERSTEAM</h4>
+          <p>
+            Importanti cavalieri di fama internazionale sono da sempre
+            ambassador globali dei nostri valori.
+          </p>
+          <button class="about-btn w-50 p-3 my-3">SCOPRILI TUTTI</button>
         </div>
 
         <div
-          class="card-3-details p-3 d-flex flex-column justify-content-end"
-          style="z-index: 1"
+          class="card card-3 d-flex flex-column my-3 col-2 p-0"
+          *ngFor="let testimonial of testimonials"
         >
-          <p class="card-text card-3-text">
-            {{ testimonial.name }} <br />
-            {{ testimonial.surname }}
-          </p>
-          <span class="tag-country d-flex align-items-center p-0 m-0">
-            <img
-              src="{{ testimonial.flag }}"
-              alt=""
-              class="flag-country d-flex justify-content-center align-items-center"
-            />
-            <span class="px-2">
-              {{ testimonial.country }}
-            </span></span
-          >
+          <div class="card-space card-space-3">
+            <img src="{{ testimonial.image }}" class="card-3-img" />
+          </div>
+
+          <div class="card-3-details d-flex flex-column p-4" style="z-index: 1">
+            <p class="card-text card-3-text">
+              {{ testimonial.name }} <br />
+              {{ testimonial.surname }}
+            </p>
+            <span class="tag-country d-flex align-items-center p-0 m-0">
+              <img
+                src="{{ testimonial.flag }}"
+                alt=""
+                class="flag-country d-flex justify-content-center align-items-center"
+              />
+              <span class="px-2">
+                {{ testimonial.country }}
+              </span></span
+            >
+          </div>
         </div>
       </div>
     </div>
   </div>
+
   <!-- fine testimonials -->
 
   <!-- social proof -->
@@ -317,32 +391,37 @@
 
   <!-- newsletter subscription -->
   <div class="newsletter d-flex justify-content-center flex-column py-5 px-4">
-    <div class="py-5">
-      <h1 class="">EQUILINE NEWS</h1>
-      <p class="my-3">
-        Iscriviti alla Newsletter per ricevere aggiornamenti su eventi,
-        collezioni e promozioni esclusive. Riceverai un promocode del 10%
-        spendibile sul tuo primo acquisto.
-      </p>
-      <input
-        type="email"
-        class="mail_privacy w-75 my-1 py-3 px-2"
-        id="mail_privacy"
-        placeholder="Inserisci la tua email"
-      />
-      <button class="about-btn w-50 p-3 my-3">ISCRIVITI</button>
+    <div class="py-5 row">
+      <div class="col-12 col-md-6">
+        <h1 class="">EQUILINE NEWS</h1>
+        <p class="my-3">
+          Iscriviti alla Newsletter per ricevere aggiornamenti su eventi,
+          collezioni e promozioni esclusive. Riceverai un promocode del 10%
+          spendibile sul tuo primo acquisto.
+        </p>
+      </div>
 
-      <div class="privacy d-flex align-items-center my-3">
+      <div class="col-12 col-md-6">
         <input
-          type="checkbox"
-          name=""
-          id="privacy_check"
-          class="privacy_check"
+          type="email"
+          class="mail_privacy w-75 my-1 py-3 px-2"
+          id="mail_privacy"
+          placeholder="Inserisci la tua email"
         />
-        <label for="privacy_check" class="mx-3"
-          >Ho letto e accetto la <u>Privacy Policy</u>
-          <span style="color: red"> *</span>
-        </label>
+        <button class="about-btn w-50 p-3 my-3">ISCRIVITI</button>
+
+        <div class="privacy d-flex align-items-center my-3">
+          <input
+            type="checkbox"
+            name=""
+            id="privacy_check"
+            class="privacy_check"
+          />
+          <label for="privacy_check" class="mx-3"
+            >Ho letto e accetto la <u>Privacy Policy</u>
+            <span style="color: red"> *</span>
+          </label>
+        </div>
       </div>
     </div>
   </div>

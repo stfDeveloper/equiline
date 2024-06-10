@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreditsModalComponent } from './components/credits-modal/credits-modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MenuDialogComponent } from './components/menu/menu.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -36,6 +37,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     MatDialogModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
   ],
   exports: [RouterModule],
   providers: [],

@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ElementRef,
+  HostListener,
+  ViewChild,
+} from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -11,6 +17,9 @@ export class HomeComponent implements OnInit {
   testimonials: any = [];
   isTelefono: boolean = true;
   currentIndex: number = 0;
+
+  @ViewChild('swiper', { static: false }) swiper!: ElementRef;
+
   constructor() {}
 
   ngOnInit(): void {
@@ -18,8 +27,40 @@ export class HomeComponent implements OnInit {
     this.getMustHaves();
     this.getTestimonials();
     this.checkDevice();
-    console.log('hero_categories', this.hero_categories);
-    console.log('isTelefono', this.isTelefono);
+  }
+
+  ngAfterViewInit() {
+    const slider = document.getElementById('swiper');
+    if (slider) {
+      let isDown = false;
+      let startX: number;
+      let scrollLeft: number;
+
+      slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        slider.classList.add('active');
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
+
+      slider.addEventListener('mouseleave', () => {
+        isDown = false;
+        slider.classList.remove('active');
+      });
+
+      slider.addEventListener('mouseup', () => {
+        isDown = false;
+        slider.classList.remove('active');
+      });
+
+      slider.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = x - startX;
+        slider.scrollLeft = scrollLeft - walk;
+      });
+    }
   }
 
   getCategories(): void {
@@ -203,20 +244,29 @@ export class HomeComponent implements OnInit {
     const heroContent = document.querySelector('.content');
     const background = document.querySelector('.background-image');
 
-    heroContent?.classList.remove('slide-right', 'slide-left'); // Reset classes
+    heroContent?.classList.remove('slide-right', 'slide-left');
     heroContent?.classList.add('slide-left');
 
-    background?.classList.remove('slide-right', 'slide-left'); // Reset classes
+    background?.classList.remove('slide-right', 'slide-left');
     background?.classList.add('slide-left');
 
     setTimeout(() => {
       if (this.currentIndex > 0) {
         this.currentIndex--;
       } else {
-        this.currentIndex = this.hero_categories.length - 1; // Loop back to the last slide
+        this.currentIndex = this.hero_categories.length - 1;
       }
       heroContent?.classList.remove('slide-left');
       background?.classList.remove('slide-left');
     }, 500);
+  }
+
+  scroll(direction: number) {
+    if (this.swiper) {
+      this.swiper.nativeElement.scrollBy({
+        left: direction * (window.innerWidth / 100),
+        behavior: 'smooth',
+      });
+    }
   }
 }

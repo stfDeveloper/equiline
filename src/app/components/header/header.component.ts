@@ -9,7 +9,11 @@ import { MatDialog } from '@angular/material/dialog';
 export class HeaderComponent implements OnInit {
   constructor(public dialog: MatDialog) {}
 
-  ngOnInit(): void {}
+  isTelefono: boolean = true;
+
+  ngOnInit(): void {
+    this.checkDevice();
+  }
 
   openMenu(): void {
     const dialogRef = this.dialog.open(MenuDialogComponent, {
@@ -20,5 +24,9 @@ export class HeaderComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       console.log('The dialog was closed');
     });
+  }
+
+  checkDevice(): void {
+    this.isTelefono = window.innerWidth < 768;
   }
 }

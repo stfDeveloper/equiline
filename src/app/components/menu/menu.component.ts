@@ -113,8 +113,12 @@ import { MatDialogRef } from '@angular/material/dialog';
         border: none;
         color: white;
         cursor: pointer;
+        outline: none; /* Add this line to remove the default outline */
       }
 
+      .close-button:focus {
+        outline: none; /* Add this line to ensure no outline on focus */
+      }
       .close-button:hover {
         color: red;
       }

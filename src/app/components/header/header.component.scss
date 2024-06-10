@@ -13,3 +13,17 @@
   font-style: normal;
   font-size: 25px;
 }
+
+@media (min-width: 1200px) {
+  .logo {
+    font-size: 35px;
+  }
+
+  .hero-burger {
+    font-size: 15px;
+  }
+
+  .hero-cart {
+    font-size: 22px;
+  }
+}
