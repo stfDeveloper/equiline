@@ -389,11 +389,10 @@ label {
   background-size: cover;
 }
 
-/* Hide the default checkbox */
 .privacy_check {
-  -webkit-appearance: none; /* Remove default checkbox style in Webkit browsers */
-  -moz-appearance: none; /* Remove default checkbox style in Firefox */
-  appearance: none; /* Remove default checkbox style */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   width: 20px;
   height: 20px;
   background: transparent;

@@ -115,6 +115,7 @@ export class HomeComponent implements OnInit {
     //   }
     // );
 
+    // risultato ->
     const mustHaves = [
       {
         title: 'LEGGINGS FULL GRIP INDIGO BLU CON LOGO LUCIDO DA DONNA',
@@ -146,6 +147,7 @@ export class HomeComponent implements OnInit {
     this.must_haves = mustHaves;
   }
 
+  // risultato ->
   getTestimonials() {
     //* faccio una chiamata a un service che chiama una funzione nel backend e restituisce un oggetto
     // this.testimonialsService.getTestimonials().subscribe(
@@ -213,7 +215,7 @@ export class HomeComponent implements OnInit {
     this.testimonials = testimonialsData;
   }
 
-  // funzione per mostrare foto mobile oppure desktop
+  // funzione per mostrare foto mobile oppure desktop - anche qualche blocco
   checkDevice(): void {
     this.isTelefono = window.innerWidth < 768;
   }
@@ -261,6 +263,7 @@ export class HomeComponent implements OnInit {
     }, 500);
   }
 
+  // tasto must have, sposto di 100 vw per vedere altre 3 card
   scroll(direction: number) {
     if (this.swiper) {
       this.swiper.nativeElement.scrollBy({
